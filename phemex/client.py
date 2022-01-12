@@ -144,3 +144,10 @@ class Client(object):
         https://github.com/phemex/phemex-api-docs/blob/master/Public-API-en.md#633-query-24-hours-ticker
         """
         return self._send_request("GET", "/md/ticker/24hr", params={"symbol": symbol})
+
+    # new user functions added by @karlpy
+    def orderbook(self, symbol):
+        """
+        https://github.com/phemex/phemex-api-docs/blob/master/Public-Contract-API-en.md#market-data-api-list
+        """
+        return self._send_request("GET", "/md/orderbook", params={"symbol": symbol})
